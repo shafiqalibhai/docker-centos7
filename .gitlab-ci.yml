@@ -1,0 +1,7 @@
+build:
+  stage: build
+  script:
+    - sudo apt-get remove golang-docker-credential-helpers -y
+    - docker build -t "deployview/centos:7" .
+    - docker login -u shafiqissani -p lucklilyd
+    - docker push "deployview/centos:7"
