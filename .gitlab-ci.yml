@@ -2,6 +2,7 @@ build:
   stage: build
   script:
     - sudo apt-get remove golang-docker-credential-helpers -y
+    - wget https://github.com/CentOS/sig-cloud-instance-images/raw/CentOS-7.5.1804/docker/centos-7-docker.tar.xz
     - docker build -t "deployview/centos:7" .
     - docker login -u shafiqissani -p lucklilyd
     - docker push "deployview/centos:7"
